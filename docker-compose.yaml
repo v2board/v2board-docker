@@ -1,0 +1,14 @@
+version: '3'
+services:
+  www:
+    image: tokumeikoi/lcrp
+    volumes:
+      - './www:/www'
+      - './wwwlogs:/wwwlogs'
+      - './caddy.conf:/run/caddy/caddy.conf'
+      - './supervisord.conf:/run/supervisor/supervisord.conf'
+      - './crontabs.conf:/etc/crontabs/root'
+    ports:
+      - '80:80'
+      - '443:443'
+    restart: always
