@@ -1,7 +1,7 @@
 version: '3'
 services:
   www:
-    image: tokumeikoi/lcrp
+    build: runtime
     volumes:
       - './www:/www'
       - './wwwlogs:/wwwlogs'
